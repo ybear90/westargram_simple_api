@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from . import my_settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(m%_@#e1ca8*9b9t_s-egq!82zx_supb5#meqw%wge2w)^6ucc'
+SECRET_KEY = my_settings.secret_dict['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,4 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SILENCED_SYSTEM_CHECKS = ['urls.W002', 'security.W019']
+# SILENCED_SYSTEM_CHECKS = ['urls.W002', 'security.W019']
+APPEND_SLASH=False
