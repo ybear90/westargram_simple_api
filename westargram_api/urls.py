@@ -17,5 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('westargram', include('westargram.urls'))
+    path('account', include('account.urls')),
+    path('comment', include('comment.urls'))
 ]
